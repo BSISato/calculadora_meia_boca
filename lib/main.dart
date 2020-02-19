@@ -28,13 +28,13 @@ class MyAppState extends State<MyApp> {
         home: SafeArea(
           //cor visor resultado
           child: Material(
-            color: Colors.red,
+            color: Colors.black,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 //VISOR
-                Expanded( 
-                    child: Row( 
+                Expanded(
+                    child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -43,7 +43,7 @@ class MyAppState extends State<MyApp> {
                         textAlign: TextAlign.right,
                         style:
                             //cor numeros visor resultado
-                            TextStyle(fontSize: 60.0, color: Colors.black),
+                            TextStyle(fontSize: 60.0, color: Colors.white),
                       )
                     ])),
                 buildRow(3, 7, 1, "÷", (valor, divisor) => valor / divisor, 1),
@@ -55,23 +55,21 @@ class MyAppState extends State<MyApp> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       buildOperadorBotoes("C", null, 2, color: Colors.black38),
-                      buildOperadorBotoes("=", (valor, divisor) => valor, 3,color: Colors.black54)
+                      buildOperadorBotoes("=", (valor, divisor) => valor, 3,
+                          color: Colors.black54)
                     ],
                   ),
                 ),
                 //ultima linha
-               Expanded(
+                Expanded(
                   child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      
                       children: <Widget>[
-                        Text(
-                          'Flutter 10 x 0 React',
-                          style: TextStyle(fontSize: 35.0, color: Colors.white),
+                        Image.asset(
+                          'imagens/univem.png',
                         ),
-                      ]
-                    ),
+                      ]),
                 )
               ],
             ),
@@ -106,7 +104,7 @@ class MyAppState extends State<MyApp> {
           padding: const EdgeInsets.all(1.0),
           child: FlatButton(
               onPressed: () => numeroPressionado(from + index),
-              //teclado 
+              //teclado
               color: Colors.black,
               child: Text(
                 "${from + index}",
@@ -132,7 +130,6 @@ class MyAppState extends State<MyApp> {
             child: Text(
               label,
               style: TextStyle(fontSize: 40.0, color: Colors.white),
-              
             )),
       ),
     );
